@@ -5,6 +5,7 @@ import { Button, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { ReactNode, useState } from "react";
 import NewestCollection from "../NewestCollection";
+import Advantages from "../Advantages";
 
 export default function HomeCard(): ReactNode {
   const message =
@@ -52,6 +53,7 @@ export default function HomeCard(): ReactNode {
           </div>
         </div>
       </div>
+      <Advantages />
       <NewestCollection />
     </div>
   );
