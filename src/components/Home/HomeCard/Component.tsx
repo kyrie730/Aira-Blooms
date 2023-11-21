@@ -6,20 +6,9 @@ import Image from "next/image";
 import { ReactNode, useState } from "react";
 import NewestCollection from "../NewestCollection";
 import Advantages from "../Advantages";
+import { RedirectToWA } from "@/shared/Utility";
 
 export default function HomeCard(): ReactNode {
-  const message =
-    "Hi! I need further information about D'Gift crochet bouquets.";
-
-  function handlePressRedirect() {
-    const toOpen = window.open(
-      `https://wa.me/${Environment.whatsappPhoneNumber}?text=` +
-        `${message.replaceAll("\n", "%0A")}`,
-      "_blank",
-      "noopener,noreferrer"
-    );
-    if (toOpen) toOpen.opener = null;
-  }
   return (
     <div className="gap-10 flex flex-col">
       <div className="flex w-full space-x-4 gap-6 items-center justify-between flex-col-reverse md:flex-row my-6">
@@ -35,7 +24,9 @@ export default function HomeCard(): ReactNode {
             background={"#C6B148"}
             color={"white"}
             className="md:w-1/4 p-6"
-            onClick={handlePressRedirect}
+            onClick={() => {
+              RedirectToWA();
+            }}
           >
             Pre-order now
           </Button>

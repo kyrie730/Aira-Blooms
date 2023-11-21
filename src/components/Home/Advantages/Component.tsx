@@ -1,8 +1,7 @@
 "use client";
 import { Environment } from "@/shared/Config";
-import { Illustrations } from "@/shared/Constant/Assets";
-import { Button, Card, Text } from "@chakra-ui/react";
-import Image from "next/image";
+import { Icons, Illustrations } from "@/shared/Constant/Assets";
+import { Button, Card, Text, Image } from "@chakra-ui/react";
 import { ReactNode, useState } from "react";
 import NewestCollection from "../NewestCollection";
 
@@ -33,11 +32,11 @@ const ADVANTAGES_DATA: Advantages[] = [
 
 export default function Advantages(): ReactNode {
   return (
-    <div className="flex justify-between space-x-10 my-10">
+    <div className="flex flex-col justify-between my-10 md:flex-row gap-10">
       {ADVANTAGES_DATA.map((e) => (
         <div
           key={e.title}
-          className="flex bg-primary flex-col gap-3 p-3 rounded-xl"
+          className=" bg-primary flex flex-col gap-3 p-10 rounded-xl w-full"
         >
           <div className="text-3xl font-bold text-white">{e.title}</div>
           <div className="text-lg text-white">{e.description}</div>

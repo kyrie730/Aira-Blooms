@@ -5,3 +5,7 @@ export enum Images {
 export enum Illustrations {
   HomeBanner = "/assets/illustrations/il_home_banner.jpg",
 }
+
+export enum Icons {
+  Handcraft = "/assets/icons/handcraft.svg",
+}
