@@ -1,7 +1,7 @@
 import { Environment } from "../Config";
 
 const DEFAULT_MESSAGE =
-  "Hi! I need further information about D'Gift crochet bouquets.";
+  "Hi! I need further information about Aira Blooms' products and services.";
 
 export function RedirectToWA(message?: string) {
   const toOpen = window.open(

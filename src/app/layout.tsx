@@ -15,7 +15,7 @@ const LatoConfig = Lato({
 
 export const metadata: Metadata = {
   title: PageTitle.Main,
-  description: `D'Gift`,
+  description: `Aira Blooms, A Story Still Growing. Every bloom carries a hope for love to flourish and hearts to grow in harmony.`,
 };
 
 export default function RootLayout({
