@@ -1,8 +1,10 @@
 enum PageTitle {
-  Main = `D'Gift`,
+  Main = `Aira Blooms`,
 
   //Pages
-  Home = `Home - D'Gift`,
+  Home = `Home - Aira Blooms`,
+  Products = `Products - Aira Blooms`,
+  About = `About - Aira Blooms`,
 }
 
 export default PageTitle;

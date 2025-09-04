@@ -6,16 +6,16 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 255, 255, 255;
-  --primary: #c6a548;
-  --secondary: #000000;
+  --primary: #ba4e63;
+  --secondary: #fff8f6;
   --tertiary: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 186, 78, 99; /* Deep Rose from the logo */
+    --background-start-rgb: 255, 248, 246; /* #FFF8F6 - blush */
+    --background-end-rgb: 252, 228, 232; /* #FCE4E8 - cream */
   }
 }
 

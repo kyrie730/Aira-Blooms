@@ -27,9 +27,13 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Quicksand:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className={LatoConfig.className}>
-        <TopLoader showSpinner color="#C6A548" />
+        <TopLoader showSpinner color="#BA4E63" />
         <ApplicationProviders>{children}</ApplicationProviders>
       </body>
     </html>

@@ -8,29 +8,28 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      animation: {
-        preload: "preload-loading 1.5s infinite ease-in-out",
+      fontFamily: {
+        serif: ['"Playfair Display"', "serif"],
+        sans: ['"Quicksand"', "sans-serif"],
       },
       colors: {
-        background: "#000000",
-        black: "#000000",
         primary: {
-          DEFAULT: "#c6a548",
-          light: "#d7c07e",
-          dark: "#004EA3",
+          DEFAULT: "#BA4E63", // Deep Rose
+          dark: "#9C3F52",
+          light: "#D06C7D",
         },
-      },
-      fontFamily: {
-        lato: ["var(--font-lato)"],
-      },
-      keyframes: {
-        "preload-loading": {
-          "0%, 100%": {
-            transform: "translate(-52px, 0)",
-          },
-          "50%": {
-            transform: "translate(96px, 0)",
-          },
+        secondary: {
+          light: "#FFFBFA",
+          DEFAULT: "#FFF8F6",
+          dark: "#F8E1DE",
+        },
+        text: {
+          DEFAULT: "#80424D", // Muted Rosewood
+          light: "#A56B77",
+          soft: "#B98793",
+        },
+        accent: {
+          DEFAULT: "#D88B99", // Dusty Pink
         },
       },
     },

@@ -1,5 +1,5 @@
 {
-  "name": "d-gift",
+  "name": "aira",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -20,13 +20,18 @@
     "autoprefixer": "10.4.15",
     "eslint": "8.49.0",
     "eslint-config-next": "13.4.19",
-    "framer-motion": "^10.16.4",
+    "framer-motion": "^10.18.0",
+    "leaflet": "^1.9.4",
     "next": "13.4.19",
     "nextjs-toploader": "^1.4.2",
     "postcss": "8.4.29",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-leaflet": "^4.2.1",
     "tailwindcss": "3.3.3",
     "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.20"
   }
 }

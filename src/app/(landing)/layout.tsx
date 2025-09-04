@@ -16,6 +16,7 @@ import {
   useBreakpointValue,
   useDisclosure,
   Heading,
+  Slide,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -26,6 +27,7 @@ import {
 import { PropsWithChildren, ReactNode } from "react";
 import Image from "next/image";
 import { Images } from "@/shared/Constant/Assets";
+import { RedirectToWA } from "@/shared/Utility";
 
 export default function WithSubnavigation({
   children,
@@ -33,91 +35,143 @@ export default function WithSubnavigation({
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box>
-      {/* <Flex
-        bg={useColorModeValue("white", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
-        minH={"60px"}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
-        align={"center"}
-        direction={{ base: "row-reverse", md: "row" }}
-      >
-        <Flex
-          flex={{ base: 1, md: "auto" }}
-          ml={{ base: -2 }}
-          display={{ base: "flex", md: "none" }}
-          justify={"end"}
-        >
-          <IconButton
-            onClick={onToggle}
-            icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-            }
-            variant={"ghost"}
-            aria-label={"Toggle Navigation"}
-          />
-        </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <div className="relative w-">
-            <Image alt="D'Gift" fill src={Images.DgiftLogo} priority={true} />
-          </div>
-
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            <DesktopNav />
-          </Flex>
-        </Flex>
-      </Flex> */}
-
-      <div className="flex bg-black text-primary h-24 py-2 px-4 border-solid border-black-1">
+    <Box className="flex flex-col gap-10">
+      <div className="flex bg-transparent text-secondary h-28 px-12 border-solid border-black-1 absolute z-10 w-full">
         <div className="flex w-full items-center gap-10">
+          <div className="flex gap-3 items-center w-3/4 md:w-1/4">
+            <div className="relative flex">
+              {/* <Image
+                alt="Aira"
+                height={100}
+                width={240}
+                src={Images.AiraLogoLandscape}
+                priority={true}
+              /> */}
+              <Image
+                alt="Aira"
+                height={100}
+                width={100}
+                src={Images.AiraLogoWhite}
+                priority={true}
+              />
+            </div>
+            <p className="text-secondary text-3xl font-bold font-serif">
+              Aira Blooms
+            </p>
+          </div>
           <div className="md:hidden">
             <IconButton
               onClick={onToggle}
               icon={
                 isOpen ? (
-                  <CloseIcon w={8} h={8} color={"#c6a548"} />
+                  <CloseIcon w={8} h={8} color={"white"} />
                 ) : (
-                  <HamburgerIcon w={8} h={8} color={"#c6a548"} />
+                  <HamburgerIcon w={8} h={8} color={"white"} />
                 )
               }
               variant={"ghost"}
               aria-label={"Toggle Navigation"}
             />
           </div>
-          <div className="flex gap-1 items-center">
-            <div className="relative py-3">
-              <Image
-                alt="D'Gift"
-                height={70}
-                width={70}
-                src={Images.DgiftLogo}
-                priority={true}
-              />
-            </div>
-            <p className="text-primary text-3xl">D&apos;Gift</p>
-          </div>
-          <div className="hidden w-1/2 md:flex ml-3">
+          <div className="hidden w-1/2 md:flex h-full">
             <DesktopNav />
+          </div>
+          <div className="hidden md:flex w-1/4 justify-end gap-6 items-center h-full">
+            <div
+              className="cursor-pointer"
+              onClick={() =>
+                window.open("https://www.instagram.com/aira_blooms/", "_blank")
+              }
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"></path>
+              </svg>
+            </div>
+            <div
+              className="cursor-pointer"
+              onClick={() => RedirectToWA("test")}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+              </svg>
+            </div>
           </div>
         </div>
       </div>
 
-      <Collapse in={isOpen} animateOpacity>
+      <Slide direction="bottom" in={isOpen} style={{ zIndex: 10 }}>
         <MobileNav />
-      </Collapse>
+      </Slide>
 
-      <div className="m-2 p-2 md:m-7 md:p-7">{children}</div>
+      <div>{children}</div>
+
+      <div className="flex justify-between w-full p-4 bg-secondary-dark items-center">
+        <div className="flex gap-3 items-center">
+          <div className="relative flex">
+            <Image
+              alt="Aira"
+              height={40}
+              width={40}
+              src={Images.AiraLogo}
+              priority={true}
+            />
+          </div>
+          <p className="text-primary text-xl font-bold font-serif">
+            Aira Blooms
+          </p>
+        </div>
+        <p className="text-primary-light text-sm hidden md:flex">
+          © 2019 Aira Blooms. All rights reserved
+        </p>
+        <div className="flex justify-center gap-6 items-center text-primary">
+          <div
+            className="cursor-pointer"
+            onClick={() =>
+              window.open("https://www.instagram.com/aira_blooms/", "_blank")
+            }
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"></path>
+            </svg>
+          </div>
+          <div className="cursor-pointer" onClick={() => RedirectToWA("test")}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              fill="currentColor"
+              viewBox="0 0 16 16"
+            >
+              <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+            </svg>
+          </div>
+        </div>
+      </div>
     </Box>
   );
 }
 
 const DesktopNav = () => {
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Stack direction={"row"} spacing={4} alignItems={"center"}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Box
@@ -126,7 +180,7 @@ const DesktopNav = () => {
             _hover={{
               textDecoration: "none",
             }}
-            className="p-2 text-base text-primary hover:text-primary-light"
+            className="p-2 font-semibold text-xl text-secondary hover:text-primary-light font-serif"
           >
             {navItem.label}
           </Box>
@@ -138,7 +192,7 @@ const DesktopNav = () => {
 
 const MobileNav = () => {
   return (
-    <Stack className="p-4 md:hidden bg-black">
+    <Stack className="p-4 md:hidden bg-secondary">
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
@@ -189,10 +243,14 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Home",
-    href: "",
+    href: "/",
   },
   {
     label: "Products",
-    href: "",
+    href: "/products",
+  },
+  {
+    label: "About",
+    href: "/about",
   },
 ];
