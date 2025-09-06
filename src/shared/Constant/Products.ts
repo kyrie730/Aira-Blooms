@@ -16,10 +16,10 @@ export const FreshSynth: BouquetList = {
   title: "Fresh/Synthetic Flowers",
   items: [
     {
-      name: "Aya",
+      name: "Saki",
       size: "Small",
-      price: 79000,
-      imgUrl: Products.Syn_S_Aya,
+      imgUrl: Products.Syn_S_Saki,
+      price: 13000,
     },
     {
       name: "Yuai",
@@ -34,10 +34,10 @@ export const FreshSynth: BouquetList = {
       imgUrl: Products.Syn_S_Honne,
     },
     {
-      name: "Saki",
+      name: "Aya",
       size: "Small",
-      imgUrl: Products.Syn_S_Saki,
-      price: 13000,
+      price: 79000,
+      imgUrl: Products.Syn_S_Aya,
     },
     {
       name: "Sora",

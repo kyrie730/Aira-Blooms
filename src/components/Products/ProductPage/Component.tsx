@@ -63,7 +63,7 @@ export default function ProductPage(): ReactNode {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <TypewriterText text="Discover Our Signature Blooms" />
+            <TypewriterText text="Aira Blooms, A Story Still Growing" />
           </motion.h1>
           <motion.p
             className="text-lg text-gray-300 max-w-2xl font-serif text-center"
@@ -71,7 +71,7 @@ export default function ProductPage(): ReactNode {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 2 }}
           >
-            <TypewriterText text="Explore our collection of handcrafted flower bouquets made with heart, detail, and love. Each piece is designed to brighten your moments and leave a lasting impression." />
+            <TypewriterText text="Every bloom carries a hope for love to flourish and hearts to grow in harmony." />
           </motion.p>
         </div>
       </div>
